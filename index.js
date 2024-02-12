@@ -1,0 +1,13 @@
+const userChoose = document.querySelectorAll("img")
+const answers = ["Ничья", "Вы","Компьютер"]
+const items = new Map()
+items.set(0,"Камень")
+items.set(1,"Ножницы")
+items.set(2,"Бумага")
+
+userChoose.forEach((el) => {
+    el.addEventListener("click", (e) =>{
+        let computerChoose = Math.round(Math.random()*1000%3)
+        alert(`Победитель: ${answers[(computerChoose-e.target.dataset.id+3) %3]}`)
+    })
+})
