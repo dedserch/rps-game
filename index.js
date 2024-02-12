@@ -7,7 +7,10 @@ items.set(2,"Бумага")
 
 userChoose.forEach((el) => {
     el.addEventListener("click", (e) =>{
-        let computerChoose = Math.round(Math.random()*1000%3)
-        alert(`Победитель: ${answers[(computerChoose-e.target.dataset.id+3) %3]}`)
+        let computerChoose = Math.round(Math.random()*1000%2)
+        alert(`Победитель: ${answers[(computerChoose-e.target.dataset.id+3) %3]}.
+        Вы выбрали: ${items.get(parseInt(e.target.dataset.id))}.
+        Компьютер выбрал: ${items.get(parseInt(computerChoose))}.`)
+        console.log(computerChoose);
     })
 })
